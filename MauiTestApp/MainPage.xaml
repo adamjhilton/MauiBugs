@@ -15,7 +15,7 @@
     HorizontalOptions="Center"
     Source="dotnet_bot.png" />
 
-   <Label
+   <!--<Label
     FontSize="18"
     HorizontalOptions="Center"
     Text="Button Enabling Visualization Bug" />
@@ -30,17 +30,8 @@
      Margin="5,0,0,0"
      Command="{Binding DisableIncrementClickCount}"
      Text="Disable" />
-   </HorizontalStackLayout>
+   </HorizontalStackLayout>-->
 
-   <Label
-    FontSize="18"
-    HorizontalOptions="Center"
-    Text="FTP Download Bug" />
-
-   <Button
-    Command="{Binding Download}"
-    HorizontalOptions="Center"
-    Text="Download" />
 
   </VerticalStackLayout>
  </ScrollView>
