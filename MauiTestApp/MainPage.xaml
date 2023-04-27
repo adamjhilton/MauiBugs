@@ -23,7 +23,6 @@
    <HorizontalStackLayout HorizontalOptions="Center">
     <Button Command="{Binding IncrementClickCount}" Text="{Binding ClickCount, StringFormat='Click Count: {0}'}" />
     <Button
-     Margin="5,0,0,0"
      Command="{Binding EnableIncrementClickCount}"
      Text="Enable" />
     <Button
@@ -32,6 +31,72 @@
      Text="Disable" />
    </HorizontalStackLayout>-->
 
+   <Label
+    FontSize="18"
+    HorizontalOptions="Center"
+    Text="Control Enabling Visualization Bug" />
+   <HorizontalStackLayout HorizontalOptions="Center">
+    <Button Command="{Binding EnableControls}" Text="Enable" />
+    <Button
+     Margin="5,0,0,0"
+     Command="{Binding DisableControls}"
+     Text="Disable" />
+   </HorizontalStackLayout>
+
+   <HorizontalStackLayout HorizontalOptions="Center">
+    <Label
+     IsEnabled="{Binding ControlsEnabled}"
+     Text="Entries:"
+     VerticalTextAlignment="Center" />
+    <Entry
+     IsEnabled="{Binding ControlsEnabled}"
+     Placeholder="Enter text..."
+     Text="TEST"
+     WidthRequest="200" />
+    <Entry
+     IsEnabled="{Binding ControlsEnabled}"
+     Placeholder="Enter text..."
+     WidthRequest="200" />
+   </HorizontalStackLayout>
+
+   <HorizontalStackLayout HorizontalOptions="Center">
+    <Label
+     IsEnabled="{Binding ControlsEnabled}"
+     Text="Picker:"
+     VerticalTextAlignment="Center" />
+    <Picker
+     IsEnabled="{Binding ControlsEnabled}"
+     ItemsSource="{Binding PickerItems}"
+     SelectedItem="{Binding PickerItem}"
+     WidthRequest="200" />
+   </HorizontalStackLayout>
+
+   <HorizontalStackLayout HorizontalOptions="Center">
+    <Label
+     IsEnabled="{Binding ControlsEnabled}"
+     Text="Date picker:"
+     VerticalTextAlignment="Center" />
+    <DatePicker IsEnabled="{Binding ControlsEnabled}" />
+   </HorizontalStackLayout>
+
+   <!--<HorizontalStackLayout HorizontalOptions="Center">
+    <Label
+     IsEnabled="{Binding ControlsEnabled}"
+     Text="Radio buttons:"
+     VerticalTextAlignment="Center" />
+    <RadioButton IsChecked="True" IsEnabled="{Binding ControlsEnabled}" />
+    <RadioButton IsEnabled="{Binding ControlsEnabled}" />
+   </HorizontalStackLayout>-->
+
+   <HorizontalStackLayout HorizontalOptions="Center">
+    <Label
+     IsEnabled="{Binding ControlsEnabled}"
+     Text="Check boxes:"
+     VerticalTextAlignment="Center" />
+    <CheckBox IsChecked="True" IsEnabled="{Binding ControlsEnabled}" />
+    <CheckBox x:Name="TrueAfterEnabledCB" IsEnabled="{Binding ControlsEnabled}" />
+    <CheckBox IsEnabled="{Binding ControlsEnabled}" />
+   </HorizontalStackLayout>
 
   </VerticalStackLayout>
  </ScrollView>

@@ -14,7 +14,13 @@ public partial class MainPage : ContentPage
   //EnableIncrementClickCount = new Command(OnEnableIncrementClickCount);
   //DisableIncrementClickCount = new Command(OnDisableIncrementClickCount);
 
+  EnableControls = new Command(OnEnableControls);
+  DisableControls = new Command(OnDisableControls);
+
   BindingContext = this;
+
+  ControlsEnabled = true;
+  TrueAfterEnabledCB.IsChecked = true;
  }
 
  /////////////////////////////////////////////////////////////////////////////////////////////
@@ -51,6 +57,20 @@ public partial class MainPage : ContentPage
  #region Display Missing Buttons Bug
  /////////////////////////////////////////////////////////////////////////////////////////////
 
+ public Command EnableControls { get; }
+
+ private void OnEnableControls() { ControlsEnabled = true; }
+
+ public Command DisableControls { get; }
+
+ private void OnDisableControls() { ControlsEnabled = false; }
+
+ public bool ControlsEnabled { get => controlsEnabled; set => SetProperty(ref controlsEnabled, value); }
+ private bool controlsEnabled;
+
+ public List<string> PickerItems { get; } = new() { "Item 1", "Item 2", "Item 3" };
+
+ public string PickerItem { get; set; } = "Item 1";
 
  /////////////////////////////////////////////////////////////////////////////////////////////
  #endregion
