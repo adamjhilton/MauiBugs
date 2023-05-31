@@ -10,31 +10,32 @@
    Spacing="25"
    VerticalOptions="Center">
 
-   <Image
+   <!--<Image
     HeightRequest="200"
     HorizontalOptions="Center"
-    Source="dotnet_bot.png" />
+    Source="dotnet_bot.png" />-->
 
-   <!--<Label
+   <Label
     FontSize="18"
     HorizontalOptions="Center"
-    Text="Button Enabling Visualization Bug" />
+    Text="Button Enabling Visualization Bug (#10825)" />
 
    <HorizontalStackLayout HorizontalOptions="Center">
-    <Button Command="{Binding IncrementClickCount}" Text="{Binding ClickCount, StringFormat='Click Count: {0}'}" />
+    <Button Command="{Binding IncrementClickCount}" Text="{Binding ClickCount, StringFormat='Click Me! ({0} Clicks)'}" />
     <Button
+     Margin="5,0,0,0"
      Command="{Binding EnableIncrementClickCount}"
      Text="Enable" />
     <Button
      Margin="5,0,0,0"
      Command="{Binding DisableIncrementClickCount}"
      Text="Disable" />
-   </HorizontalStackLayout>-->
+   </HorizontalStackLayout>
 
    <Label
     FontSize="18"
     HorizontalOptions="Center"
-    Text="Control Enabling Visualization Bug" />
+    Text="Control Enabling Visualization Bug (#14813)" />
    <HorizontalStackLayout HorizontalOptions="Center">
     <Button Command="{Binding EnableControls}" Text="Enable" />
     <Button

@@ -10,9 +10,9 @@ public partial class MainPage : ContentPage
  public MainPage()
  {
   InitializeComponent();
-  //IncrementClickCount = new Command(OnIncrementClickCount, ValidateIncrementClickCount);
-  //EnableIncrementClickCount = new Command(OnEnableIncrementClickCount);
-  //DisableIncrementClickCount = new Command(OnDisableIncrementClickCount);
+  IncrementClickCount = new Command(OnIncrementClickCount, ValidateIncrementClickCount);
+  EnableIncrementClickCount = new Command(OnEnableIncrementClickCount);
+  DisableIncrementClickCount = new Command(OnDisableIncrementClickCount);
 
   EnableControls = new Command(OnEnableControls);
   DisableControls = new Command(OnDisableControls);
@@ -26,33 +26,33 @@ public partial class MainPage : ContentPage
  /////////////////////////////////////////////////////////////////////////////////////////////
  #endregion
 
- //#region Button Enabling Visualization Bug
- ///////////////////////////////////////////////////////////////////////////////////////////////
+ #region Button Enabling Visualization Bug
+ /////////////////////////////////////////////////////////////////////////////////////////////
 
- //private void OnCounterClicked(object sender, EventArgs e) { ClickCount++; }
+ private void OnCounterClicked(object sender, EventArgs e) { ClickCount++; }
 
- //public Command IncrementClickCount { get; }
+ public Command IncrementClickCount { get; }
 
- //private void OnIncrementClickCount() { ClickCount++; }
+ private void OnIncrementClickCount() { ClickCount++; }
 
- //private bool ValidateIncrementClickCount() { return CanClickCount; }
+ private bool ValidateIncrementClickCount() { return CanClickCount; }
 
- //public int ClickCount { get => clickCount; set => SetProperty(ref clickCount, value); }
- //private int clickCount;
+ public int ClickCount { get => clickCount; set => SetProperty(ref clickCount, value); }
+ private int clickCount;
 
- //public bool CanClickCount { get => canClickCount; set => SetProperty(ref canClickCount, value, null, () => IncrementClickCount.ChangeCanExecute()); }
- //private bool canClickCount;
+ public bool CanClickCount { get => canClickCount; set => SetProperty(ref canClickCount, value, null, () => IncrementClickCount.ChangeCanExecute()); }
+ private bool canClickCount;
 
- //public Command EnableIncrementClickCount { get; }
+ public Command EnableIncrementClickCount { get; }
 
- //private void OnEnableIncrementClickCount() { CanClickCount = true; }
+ private void OnEnableIncrementClickCount() { CanClickCount = true; }
 
- //public Command DisableIncrementClickCount { get; }
+ public Command DisableIncrementClickCount { get; }
 
- //private void OnDisableIncrementClickCount() { CanClickCount = false; }
+ private void OnDisableIncrementClickCount() { CanClickCount = false; }
 
- ///////////////////////////////////////////////////////////////////////////////////////////////
- //#endregion
+ /////////////////////////////////////////////////////////////////////////////////////////////
+ #endregion
 
  #region Display Missing Buttons Bug
  /////////////////////////////////////////////////////////////////////////////////////////////
